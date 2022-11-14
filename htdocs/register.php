@@ -32,7 +32,7 @@
             <br>
             <input type="submit" value="Registrieren">
         </form>
-
+        <a href="login.php">zum Login</a>
         <?php 
 
             $dbname = "praxis";

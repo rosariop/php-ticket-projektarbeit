@@ -4,3 +4,5 @@ CREATE TABLE user (
     user_role VARCHAR(32),
     PRIMARY KEY (username)
 );
+
+select * from user where username = 'admin' AND pass = 'admin';

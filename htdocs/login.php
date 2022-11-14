@@ -13,24 +13,15 @@
 </head>
 <body>
     <div class="center">
-        <h1>Registrieren</h1>
-        <form action="register.php" method="post">
+        <h1>Login</h1>
+        <form action="login.php" method="post">
             <label for="username">Username</label><br>
             <input type="text" id="username" name="username"><br>
 
             <label for="password">Password</label><br>
             <input type="password" id="password" name="password"><br>
 
-            <label for="password-retype">Password</label><br>
-            <input type="password-retype" id="password-retype" name="password-retype"><br>
-            <br>
-            <select name="role" id="role">
-                <option value="user">user</option>
-                <option value="admin">admin</option>
-            </select>
-            <br>
-            <br>
-            <input type="submit" value="Registrieren">
+            <input type="submit" value="Login">
         </form>
 
         <?php 
@@ -39,14 +30,6 @@
             // Vars
             $username = $_POST["username"];
             $pass = $_POST["password"];
-            $pass2 = $_POST["password-retype"];
-            $role = $_POST["role"];
-
-            // Pass retype
-            if ($pass != $pass2){
-                echo "<p style='color: red'>Passwörter stimmen nicht überein!</p>";
-                return;
-            }
 
             //mysql connection
             $db=mysqli_connect("", "root", "rootpw")
@@ -55,12 +38,11 @@
             or die ("<b>Datenbank konnte nicht angesprochen werden</b>");
             
             //sql query
-            $query = "INSERT INTO user (username, pass, user_role) values ('". $username . "', '". $pass ."', '". $role ."');";
-
-            mysqli_query($db, $query) or die ("<b>Fehler bei der Datenbankanfrage</b>");         
+            $query = "select * from user where username = '". $username ."' and pass = '" . $pass ."';";
+            //here
+            $ergebnis = mysqli_query($db, $query) or die ("<b>Fehler bei der Datenbankanfrage</b>");         
+            
             mysqli_close($db);
-
-            echo "<p style=\"color: green\">Erfolg</p>"
         ?>
     </div>
 </body>
