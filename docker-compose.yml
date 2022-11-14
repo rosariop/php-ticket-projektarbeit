@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  php:
+    image: webdevops/php-nginx:8.1
+    ports:
+      - "127.0.0.1:80:80/tcp"
+    volumes:
+      - /home/polito/projects/php-praxis/htdocs:/app
+  mysql:
+    image: mariadb:10.9.2
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    ports:
+      - 127.0.0.1:3306:3306
+    volumes:
+      - /home/polito/projects/php-praxis/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpw
+      - MYSQL_PASSWORD=rootpw
+      - MYSQL_DATABASE=praxis
+      - MYSQL_USER=uni
