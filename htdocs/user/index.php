@@ -38,6 +38,8 @@
         echo "<li> <a href=\"tickets.php?category=$zeile[0]\">" . $zeile[0] . "</a></li>";
     }
     echo "</ul>";
+
+    echo "<a href=\"newticket.php\">+ neues ticket</a>"
     ?>
 </body>
 </html>
