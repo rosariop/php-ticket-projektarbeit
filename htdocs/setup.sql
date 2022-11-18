@@ -6,3 +6,13 @@ CREATE TABLE user (
 );
 
 select * from user where username = 'admin' AND pass = 'admin';
+
+create TABLE categorie (
+    cat_name VARCHAR(16),
+    PRIMARY KEY (cat_name)
+);
+
+insert into categorie(cat_name) values("Hardware");
+insert into categorie(cat_name) values("Software");
+
+select * from categorie;

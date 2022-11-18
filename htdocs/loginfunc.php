@@ -1,11 +1,11 @@
 <?php
     session_start();
-    $dbname = "praxis";
     // Vars
     $username = $_POST["username"];
     $pass = $_POST["password"];
 
     //mysql connection
+    $dbname = "praxis";
     $db = mysqli_connect("", "root", "rootpw")
         or die("<b>Zur Zeit kein Connect zum Datenbankserver!</b>");
     mysqli_select_db($db, $dbname)
