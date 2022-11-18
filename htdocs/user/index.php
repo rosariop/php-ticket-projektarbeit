@@ -35,7 +35,7 @@
     for ($a = $anz - 1; $a > -1; $a--) {
         mysqli_data_seek($ergebnis, $a);
         $zeile = mysqli_fetch_row($ergebnis);
-        echo "<li> <a href=\"tickets?category=$zeile[0]\">" . $zeile[0] . "</a></li>";
+        echo "<li> <a href=\"tickets.php?category=$zeile[0]\">" . $zeile[0] . "</a></li>";
     }
     echo "</ul>";
     ?>
