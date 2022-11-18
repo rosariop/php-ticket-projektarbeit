@@ -27,8 +27,9 @@
     mysqli_select_db($db, $dbname)
     or die("<b>Datenbank konnte nicht angesprochen werden</b>");
 
+    echo "<h2>Fragen zu bestätigen:</h2>";
     //sql query
-    $query = "select * from tickets where categorie = \"$category \";";
+    $query = "select * from ticket where categorie = \"$category\" AND fragensteller = \"$username\" AND ticket_status=\"NA\";";
     //here
     $ergebnis = mysqli_query($db, $query) or die("<b>Fehler bei der Datenbankanfrage</b>");
     $anz = mysqli_num_rows($ergebnis);
@@ -36,7 +37,20 @@
     for ($a = $anz - 1; $a > -1; $a--) {
         mysqli_data_seek($ergebnis, $a);
         $zeile = mysqli_fetch_row($ergebnis);
-        echo "<li> <a href=\"tickets?category=$zeile[0]\">" . $zeile[0] . "</a></li>";
+        echo "<li> <a href=\"ticket.php?ticket_id=$zeile[0]\">" . $zeile[1] ."</a></li>";
+    }
+    echo "</ul>";
+
+
+    echo "<h2>Alle Fragen</h2>";
+    $query = "select * from ticket where categorie = \"$category\" AND ticket_status=\"OK\";";
+    $ergebnis = mysqli_query($db, $query) or die("<b>Fehler bei der Datenbankanfrage</b>");
+    $anz = mysqli_num_rows($ergebnis);
+    echo "<ul>";
+    for ($a = $anz - 1; $a > -1; $a--) {
+        mysqli_data_seek($ergebnis, $a);
+        $zeile = mysqli_fetch_row($ergebnis);
+        echo "<li> <a href=\"ticket.php?ticket_id=$zeile[0]\">" . $zeile[1] . "</a></li>";
     }
     echo "</ul>";
     ?>
