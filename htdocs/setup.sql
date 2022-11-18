@@ -1,3 +1,4 @@
+/* User */
 CREATE TABLE user (
     username VARCHAR(16),
     pass VARCHAR(32),
@@ -7,6 +8,8 @@ CREATE TABLE user (
 
 select * from user where username = 'admin' AND pass = 'admin';
 
+
+/* Categortie */
 create TABLE categorie (
     cat_name VARCHAR(16),
     PRIMARY KEY (cat_name)
