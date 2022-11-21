@@ -39,6 +39,7 @@ CREATE TABLE ticket (
 /*
     LEGENDE Status:
     QA - QUESTION ASKED
+    NW - NEEDS WORK
     NA - NEEDS APPROVAL
     OK - Fertig
 */
@@ -46,3 +47,7 @@ CREATE TABLE ticket (
 insert into ticket (titel, frage, antwort, ticket_status, categorie, fragensteller)
 values("Titel Frage 1", "Eine etwas zu kurz geratene Frage", 
 "Eine etwas zu kurz geratene Anrtwort", "NA", "Software", "admin");
+
+insert into ticket (titel, frage, antwort, ticket_status, categorie, fragensteller)
+values("Titel Frage 1", "Eine etwas zu kurz geratene Frage", 
+"Eine etwas zu kurz geratene Anrtwort", "NW", "Software", "admin");

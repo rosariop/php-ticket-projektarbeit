@@ -59,7 +59,7 @@
         if($zeile[4] === "NA"){
             echo "<select name=\"ticket_status\" id=\"ticket_status\">
                 <option value=\"\">--- ticket status auswählen ---</option>
-                <option value=\"NA\">Braucht Nachbesserung</option>
+                <option value=\"NW\">Braucht Nachbesserung</option>
                 <option value=\"OK\">Fertig</option>
             </select>
             <br/>
