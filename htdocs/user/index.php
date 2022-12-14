@@ -47,6 +47,29 @@ if ($role === "user") {
 
         echo "<a href=\"newticket.php\">+ neues ticket</a>"
         ?>
+
+        <h3>E-Mail postfach</h3>
+        <?php
+        //mysql connection
+        $dbname = "praxis";
+        $db = mysqli_connect("", "root", "rootpw")
+            or die("<b>Zur Zeit kein Connect zum Datenbankserver!</b>");
+        mysqli_select_db($db, $dbname)
+            or die("<b>Datenbank konnte nicht angesprochen werden</b>");
+
+        //sql query
+        $query = "select * from ticket where fragensteller = \"$username\" AND ticket_status=\"NA\";";
+        //here
+        $ergebnis = mysqli_query($db, $query) or die("<b>Fehler bei der Datenbankanfrage</b>");
+        $anz = mysqli_num_rows($ergebnis);
+        echo "<ul>";
+        for ($a = $anz - 1; $a > -1; $a--) {
+            mysqli_data_seek($ergebnis, $a);
+            $zeile = mysqli_fetch_row($ergebnis);
+            echo "<li> <a href=\"ticket.php?ticket_id=$zeile[0]\">Neue Aktion Erforderlich: " . $zeile[1] . "</a></li>";
+        }
+        echo "</ul>";
+        ?>
     </body>
 
     </html>

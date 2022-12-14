@@ -56,6 +56,8 @@ if ($role === "user") {
             </div>
             <input class="btn btn-primary"type="submit" value="Fragen">
         </form>
+        <br/>
+        <a href="/user/index.php" style="float: right" class="btn btn-danger">Abbrechen</a>
     </body>
 
     </html>

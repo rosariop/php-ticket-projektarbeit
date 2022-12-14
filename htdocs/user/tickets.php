@@ -59,6 +59,9 @@ if ($role === "user") {
         }
         echo "</ul>";
         ?>
+        <br/>
+
+        <a href="/user/index.php" style="float: right"  class="btn btn-warning">zur hauptseite</a>
     </body>
 
     </html>

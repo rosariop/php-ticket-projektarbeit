@@ -62,11 +62,13 @@
                 <option value=\"NW\">Braucht Nachbesserung</option>
                 <option value=\"OK\">Fertig</option>
             </select>
-            <br/>
+            <br/><br/>
             <input class=\"btn btn-primary\"type=\"submit\" value=\"Senden\">";
         }
     echo "</form>"
     ?>
+    <br/>
+    <a href="/user/index.php" style="float: right" class="btn btn-danger">Abbrechen</a>
 </body>
 </html>
 <?php
