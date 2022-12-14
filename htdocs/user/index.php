@@ -24,6 +24,8 @@ if ($role === "user") {
 
         <?php echo "<h1>Hallo $username</h1>" ?>
 
+        <a style="float: right" class="btn btn-danger" href="/logout.php">Logout</a>
+
         <?php
         //mysql connection
         $dbname = "praxis";
@@ -58,7 +60,7 @@ if ($role === "user") {
             or die("<b>Datenbank konnte nicht angesprochen werden</b>");
 
         //sql query
-        $query = "select * from ticket where fragensteller = \"$username\" AND ticket_status=\"NA\";";
+        $query = "select * from ticket where fragensteller = \"$username\" AND NOT ticket_status=\"OK\";";
         //here
         $ergebnis = mysqli_query($db, $query) or die("<b>Fehler bei der Datenbankanfrage</b>");
         $anz = mysqli_num_rows($ergebnis);

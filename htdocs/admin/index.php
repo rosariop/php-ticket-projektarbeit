@@ -21,6 +21,7 @@ if ($role === "admin") {
 
     <body class="container">
         <h1><?php echo "Hallo " . $username ?></h1>
+        <a style="float: right" class="btn btn-danger" href="/logout.php">Logout</a>
 
         <h3>Neue Anfragen</h3>
         <table class="table" border="1">

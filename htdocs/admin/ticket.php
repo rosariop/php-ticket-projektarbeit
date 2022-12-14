@@ -55,16 +55,13 @@ if ($role === "admin") {
         </div>    
         <div class=\"mb-3\">
             <label for=\"antwort\">Antwort:</label><br>
-            <textarea readonly class=\"form-control\" type=\"text\" id=\"antwort\" name=\"antwort\" rows=\"10\">$zeile[3]</textarea>
-            </div>
-            <div class=\"mb-3\">
-            <label for=\"antwort\">neue Antwort:</label><br>
-            <textarea class=\"form-control\" type=\"text\" id=\"antwort\" name=\"neue_antwort\" rows=\"10\"></textarea>
-            </div>
+            <textarea class=\"form-control\" type=\"text\" id=\"antwort\" name=\"antwort\" rows=\"10\">$zeile[3]</textarea>
+        </div>
         ";
         ?>
         <input class="btn btn-primary" type="submit" value="Senden">
-        </form>
+    </form>
+        <a href="/admin" style="float: right" class="btn btn-danger" type="submit" value="Senden">Abbrechen</a>
     </body>
 
     </html>

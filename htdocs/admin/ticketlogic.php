@@ -6,7 +6,7 @@
     $role = $_SESSION["role"];
 
     $ticketid = $_POST["ticket_id"];
-    $neue_antwort = $_POST["neue_antwort"];
+    $neue_antwort = $_POST["antwort"];
 
     if($role === "admin"){
         //mysql connection
