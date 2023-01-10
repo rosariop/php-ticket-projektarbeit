@@ -60,7 +60,7 @@ if ($role === "user") {
             or die("<b>Datenbank konnte nicht angesprochen werden</b>");
 
         //sql query
-        $query = "select * from ticket where fragensteller = \"$username\" AND NOT ticket_status=\"OK\";";
+        $query = "select * from ticket where fragensteller = \"$username\" AND NOT ticket_status=\"OK\" AND NOT ticket_status=\"QA\";";
         //here
         $ergebnis = mysqli_query($db, $query) or die("<b>Fehler bei der Datenbankanfrage</b>");
         $anz = mysqli_num_rows($ergebnis);
